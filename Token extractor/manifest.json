@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Copy WebAPI Token",
+  "version": "1.0",
+  "description": "This extension copies the data from 'data-loyalty_webapi_token' attribute to clipboard.",
+  "permissions": ["clipboardWrite", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
